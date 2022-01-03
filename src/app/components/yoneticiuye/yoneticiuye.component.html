@@ -1,0 +1,33 @@
+<div class="container bg-light" style="min-height: 100vh;">
+    <h1 class="text-center">Üye İşlemleri Sayfasına Hoşgeldiniz</h1>
+    <button type="button" class="btn btn-primary mx-3" [routerLink]="['../yoneticipaneli']">Yönetici paneline dön</button>
+
+<div class="container mt-5">
+    <button type="button" class="btn btn-primary mb-3" [routerLink]="['../yoneticiuyeislemleri','']">Üye Ekle</button>
+
+    <div class="mx-auto">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Üye Adı</th>
+                <th scope="col">Üye Mail</th>
+                <th scope="col">Üye Şifre</th>
+                <th scope="col">İşlem</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let kullanici of kullanicilar">
+                <th>{{kullanici.key}}</th>
+                <td>{{kullanici.kullaniciAdi}}</td>
+                <td>{{kullanici.kullaniciMail}}</td>
+                <td>{{kullanici.kullaniciSifre}}</td>
+                <td><button type="button" class="btn btn-danger mr-2" (click)="kullanicisil(kullanici.key)">Sil</button>
+                    <button type="button" class="btn btn-warning" (click)="kullaniciduzenle(kullanici)">Düzenle</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+</div>
+</div>

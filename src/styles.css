@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  background-color: #dadada!important;
+}
+
+.kategori {
+  border: 1px solid;
+  padding: 4px;
+  border-radius: 5px;
+  font-size: 10px;
+}
+.k-gundem{
+  background-color: blueviolet;
+  color: white;
+}
+.k-ekonomi{
+  background-color: rgb(43, 226, 211);
+  color: white;
+}
+.k-spor{
+  background-color: rgb(171, 226, 43);
+  color: white;
+}
+.k-dunya{
+  background-color: rgb(226, 55, 43);
+  color: white;
+}
+.col-md-3 {
+  padding-right: 0px!important;
+  padding-left: 0px!important;
+  margin-right: 5px!important;
+  margin-bottom: 5px!important;
+}

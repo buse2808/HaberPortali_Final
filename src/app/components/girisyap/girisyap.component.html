@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <p class="alert alert-danger" *ngIf="hata">{{mesaj}}</p>
+      <div class="card">
+        <h5 class="card-header alert-primary text-center">Giriş Ekranı</h5>
+        <div class="card-body">
+          <form class="form-signin">
+            <input type="email" #inputEmail class="form-control mb-3" placeholder="E-posta adresini giriniz" required>
+            <input type="password" #inputPassword class="form-control mb-3" placeholder="Şifre giriniz" required>
+            <button class="btn btn-lg btn-primary btn-block" type="submit"
+              (click)="GirisYap(inputEmail.value,inputPassword.value)">Giriş Yap</button>
+          </form>
+          <div>
+            <a [routerLink]="['../uyeol']" class="mt-5">Üye Ol</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>

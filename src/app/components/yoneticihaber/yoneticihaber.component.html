@@ -1,0 +1,37 @@
+<div class="container bg-light" style="min-height: 100vh;">
+    <h1 class="text-center">Haber İşlemleri Sayfasına Hoşgeldiniz</h1>
+    <button type="button" class="btn btn-primary mx-3" [routerLink]="['../yoneticipaneli']">Yönetici paneline dön</button>
+
+<div class="container mt-5">
+    <button type="button" class="btn btn-primary mb-3" [routerLink]="['../yoneticihaberislemleri','']">Haber Ekle</button>
+
+    <div class="mx-auto">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Haber Foto</th>
+                <th>Haber Kategori</th>
+                <th class="col-2">Haber Başlık</th>
+                <th>Haber Tarih</th>
+                <th>Haber Detay</th>
+                <th>İşlem</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let haber of haberler">
+                <th>{{haber.key}}</th>
+                <th><img [src]="haber.haberFoto" class="rounded mx-auto d-block" width="100px"></th>
+                <td><span [ngClass]="'badge badge-'+haber.kategoriClassName">{{haber.kategoriAd}}</span></td>
+                <td>{{haber.haberBaslik}}</td>
+                <td>{{haber.haberTarih | date:"dd/MM/yyyy HH:mm"}}</td>
+                <td>{{haber.haberDetay | slice:0:20}}</td>
+                <td><button type="button" class="btn btn-danger mr-2" (click)="habersil(haber.key)">Sil</button>
+                    <button type="button" class="btn btn-warning" (click)="haberduzenle(haber)">Düzenle</button></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</div>

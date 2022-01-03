@@ -1,0 +1,38 @@
+<div class="container bg-light" style="min-height: 100vh;">
+  <h1 class="text-center">Haber Ekle/Düzenle Sayfasına Hoşgeldiniz</h1>
+  <button type="button" class="btn btn-primary mx-3" [routerLink]="['../../yoneticihaber']">Haber sayfasına
+    dön</button>
+
+  <div class="container mt-5">
+    <div class="alert alert-danger" *ngIf="hata">{{mesaj}}</div>
+    <div class="mx-auto">
+
+      <form #frmhaber="ngForm" (ngSubmit)="haberEkle()">
+        <div class="form-group">
+          <label>Haber foto url giriniz.</label>
+          <input type="text" class="form-control" #haberFoto name="haberFoto" [(ngModel)]="yeniHaber.haberFoto"
+            required>
+        </div>
+        <div class="form-group">
+          <label>Haber başlık giriniz.</label>
+          <input type="text" class="form-control" #haberBaslik name="haberBaslik" [(ngModel)]="yeniHaber.haberBaslik"
+            required>
+        </div>
+        <div class="form-group">
+          <label>Haber detay giriniz.</label>
+          <textarea class="form-control" #haberDetay name="haberDetay" [(ngModel)]="yeniHaber.haberDetay"
+          required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Kategori Seç</label>
+          <select class="form-control" #haberKategori name="haberKategori"  [(ngModel)]="yeniHaber.haberKategorikey" required>
+            <option *ngFor="let kategori of kategoriler" [ngValue]="kategori.key">{{kategori.kategoriAd}}</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+      </form>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container bg-light" style="min-height: 100vh; border-radius: 5px;">
+    <div class="row">
+        <div class="container mt-5">
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+          
+                <div class="card">
+                  <div class="card-body">
+                    <form class="form-signin" #uyeForm="ngForm" (ngSubmit)="UyeOl()">
+                      <input type="email" #inputEmail name="kullaniciMail" [(ngModel)]="yeniKullanici.kullaniciMail" class="form-control mb-3" placeholder="E-posta adresini giriniz" required>
+                      <input type="text" #inputKullaniciAd name="kullaniciAdi" [(ngModel)]="yeniKullanici.kullaniciAdi" class="form-control mb-3" placeholder="Kullanıcı Adı giriniz" required>
+                      <input type="password" #inputPassword name="kullaniciSifre" [(ngModel)]="yeniKullanici.kullaniciSifre" class="form-control mb-3" placeholder="Şifre giriniz" required>
+                      <button class="btn btn-lg btn-primary btn-block" type="submit">Üye Ol</button>
+                    </form>
+                  </div>
+                </div>
+          
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+          </div>
+          
+  </div>
+  

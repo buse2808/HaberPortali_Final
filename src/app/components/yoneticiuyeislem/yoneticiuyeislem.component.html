@@ -1,0 +1,26 @@
+<div class="container bg-light" style="min-height: 100vh;">
+  <h1 class="text-center">Kategori Ekle/Düzenle Sayfasına Hoşgeldiniz</h1>
+  <button type="button" class="btn btn-primary mx-3" [routerLink]="['../../yoneticiuye']">Üyeler Sayfasına Dön</button>
+
+  <div class="container mt-5">
+    <div class="mx-auto">
+
+      <form #frmkategori="ngForm" (ngSubmit)="kullaniciEkle()">
+        <div class="form-group">
+          <label>Kullanıcı Mail Yazınız</label>
+          <input type="email" #inputEmail name="kullaniciMail" [(ngModel)]="kullanici.kullaniciMail"
+            class="form-control mb-3" placeholder="E-posta adresini giriniz" required>
+          <label>Kullanıcı Adı Yazınız.</label>
+          <input type="text" #inputKullaniciAd name="kullaniciAdi" [(ngModel)]="kullanici.kullaniciAdi"
+            class="form-control mb-3" placeholder="Kullanıcı Adı giriniz" required>
+          <label>Kullanıcı Şifre Yazınız.</label>
+          <input type="password" #inputPassword name="kullaniciSifre" [(ngModel)]="kullanici.kullaniciSifre"
+            class="form-control mb-3" placeholder="Şifre giriniz" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+      </form>
+
+    </div>
+
+  </div>
+</div>

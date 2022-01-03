@@ -1,0 +1,30 @@
+<div class="container bg-light" style="min-height: 100vh;">
+    <h1 class="text-center">Kategori Ekle/Düzenle Sayfasına Hoşgeldiniz</h1>
+    <button type="button" class="btn btn-primary mx-3" [routerLink]="['../../yoneticikategori']">Kategori Sayfasına Dön</button>
+
+<div class="container mt-5">
+<div class="alert alert-danger" *ngIf="hata">{{mesaj}}</div>
+    <div class="mx-auto">
+
+        <form #frmkategori="ngForm" (ngSubmit)="kategoriEkle()">
+            <div class="form-group">
+              <label>Kategori Adı Yazınız.</label>
+              <input type="text" class="form-control" #kategoriAd name="kategoriAd" [(ngModel)]="yeniKategori.kategoriAd" required>
+            </div>
+            <div class="form-group">
+                <label>Kategori Rengi Seç</label>
+                <select class="form-control" #kategoriRenk name="kategoriClassName" [(ngModel)]="yeniKategori.kategoriClassName" required>
+                  <option class="alert-danger" value="danger">Kırmızı</option>
+                  <option class="alert-success" value="success">Yeşil</option>
+                  <option class="alert-warning" value="warning">Sarı</option>
+                  <option class="alert-primary" value="primary">Mavi</option>
+                  <option class="alert-info" value="info">Açık Mavi</option>
+                </select>
+              </div>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+          </form>
+
+    </div>
+
+</div>
+</div>

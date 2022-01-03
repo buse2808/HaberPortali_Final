@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+      <div class="card col-md-3 mr-4 mb-4" *ngFor="let haber of haberler">
+        <img class="card-img-top" [src]="haber.haberFoto" alt="Card image cap" />
+        <div class="card-body">
+          <a class="link-primary">
+            <h5 class="card-title" (click)="haberDetay(haber.key)">
+              {{haber.haberBaslik}}
+            </h5>
+          </a>
+          <small>{{haber.haberTarih |date:"dd/MM/yyyy HH:mm"}}</small><span [ngClass]="'float-right badge badge-'+haber.kategoriClassName">{{haber.kategoriAd}}</span>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  

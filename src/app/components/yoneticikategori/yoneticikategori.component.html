@@ -1,0 +1,31 @@
+<div class="container bg-light" style="min-height: 100vh;">
+    <h1 class="text-center">Kategori İşlemleri Sayfasına Hoşgeldiniz</h1>
+    <button type="button" class="btn btn-primary mx-3" [routerLink]="['../yoneticipaneli']">Yönetici paneline dön</button>
+
+<div class="container mt-5">
+    <button type="button" class="btn btn-primary mb-3" [routerLink]="['../yoneticikategoriislemleri','']">Kategori Ekle</button>
+
+    <div class="mx-auto">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Kategori Adı</th>
+                <th scope="col">Kategori Rengi</th>
+                <th scope="col">İşlem</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let kategori of kategoriler">
+                <th>{{kategori.key}}</th>
+                <td>{{kategori.kategoriAd}}</td>
+                <td><span [ngClass]='"badge badge-pill badge-"+kategori.kategoriClassName'>{{kategori.kategoriClassName}}</span></td>
+                <td><button type="button" class="btn btn-danger mr-2" (click)="kategorisil(kategori.key)">Sil</button>
+                    <button type="button" class="btn btn-warning" (click)="kategoriduzenle(kategori)">Düzenle</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+</div>
+</div>
